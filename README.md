@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Karthik-Shenoy/Team-Ankuram-maxo/blob/main/README.md">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/768px-Python-logo-notext.svg.png" alt="Logo" width="80" height="80">
+    <img src="https://firebasestorage.googleapis.com/v0/b/ankuram-maxo-website.appspot.com/o/Project_Git%2FAnkuram%20Logo.png?alt=media&token=ac69eb50-5050-408c-a058-e1fcb11f2487" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">Team-Ankuram</h3>
@@ -46,7 +46,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Hello, welcome to Abc. Extremely glad you’re here. Have you ever been frustrated/discouraged while looking out for a bunch of aptitude questions? Were the level of questions not able to meet your expectations? Ever felt the need of an associate to discuss and clear your doubts? This portal has been designed to guide you through this strenuous journey and pave an easier path for the destination.
+Hello, welcome to Coder Connect. Extremely glad you’re here. Have you ever been frustrated/discouraged while looking out for a bunch of aptitude questions? Were the level of questions not able to meet your expectations? Ever felt the need of an associate to discuss and clear your doubts? This portal has been designed to guide you through this strenuous journey and pave an easier path for the destination.
 
 ### Built With
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)

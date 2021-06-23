@@ -2,14 +2,73 @@
 {% load static %}
 
 {% block specif_style  %}
-<link rel="stylesheet" href="{% static 'css/style_PSF.css' %}">
+   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+  <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/problem.css' %}">
 {% endblock specif_style  %}
 
 {% block content %}
+<!-- header-area -->
+    <header class="header" >
+      
+      <!-- Header Inner -->
+      <div class="header-inner">
+        <div class="container">
+          <div class="inner">
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-12">
+                <!-- Start Logo -->
+                <div class="logo">
+                  <img class="img-fluid" src="{% static 'Images/logo.png'  %}">
+                </div>
+                <!-- End Logo -->
+                
+              </div>
+              <div class="col-lg-7 col-md-9 col-12">
+                <!-- Main Menu -->
+                <div class="main-menu">
+                  <nav class="navigation">
+                    <ul class="nav menu">
+                      <li><a href="/home/">Home </a></li>
+                      <li><a href="/aptitude/">Aptitude </a></li>
+                      <li class="active"><a href="/Problem_Solving/">Coding</a>
+                      </li>
+                      <li><a href="/blog/">Blogs </a></li>
+                      <li><a href="/resources/">Resources</a></li>
+                      <li><a href=""><i class ="far fa-user"></i>&nbsp;{{user_name}}<i class="icofont-rounded-down"></i></a>
+                       <ul class="dropdown">
+                          <li><a href="/manage-posts/">Manage Posts</a></li>
+                          <li><a href="/logout/">Log out</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <!--/ End Main Menu -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    
 		<div class = "row">
-
-			<div class = "column">
-				<section class = "center-pane">
+<h1>Coding Problems</h1>
+			<div class = "col-lg-8">
+				<section class = "left-pane">
 				{% for problem in problems %}
 					<div class = "card">
 						<div class = "card-text">
@@ -17,59 +76,84 @@
 							<p>Difficulty : {{problem.difficulty}}, Topic : {{problem.topic}}</p>
 						</div>
 						<div class = "problem-solve-button">
-							<button class = "solve-button">Solve Problem</button>
+							<button onclick="location.href='{{problem.link}}'" class = "solve-button">Solve Problem</button>
 						</div>
 					</div>
 				{% endfor %}
 				</section>
 			</div>
 
-			<div class = "column">
+
+
+
+			<div class = "col-lg-4" id="sidebar">
 				<section class = "right-pane">
 					<div class = "difficulty-selecter">
+						<form method = "POST">
+						{% csrf_token %}
 						<h2>Difficulty</h2>
-						<input type="checkbox" id="Easy" name="Easy" value="">
+						<input type="checkbox" id="Easy" name="D1" value="Easy">
 						<label for="Easy">Easy</label><br>
 
-						<input type="checkbox" id="Medium" name="Medium" value="">
+						<input type="checkbox" id="Medium" name="D2" value="Medium">
 						<label for="Medium">Medium</label><br>
 
-						<input type="checkbox" id="Hard" name="Hard" value="">
+						<input type="checkbox" id="Hard" name="D3" value="Hard">
 						<label for="Hard">Hard</label><br>
 					</div>
 					<div>
 						<h2>Sub-Domains</h2>
-						<input type="checkbox" id="Time-Complexity" name="Time-Complexity" value="">
+						<input type="checkbox" id="Time-Complexity" name="T1" value="Time-Complexity">
 						<label for="Time-Complexity">Time-Complexity</label><br>
 
-						<input type="checkbox" id="Sorting" name="Sorting" value="">
+						<input type="checkbox" id="Sorting" name="T2" value="Sorting">
 						<label for="Sorting">Sorting</label><br>
 
-						<input type="checkbox" id="Complete-Search" name="Complete-Search" value="Boat">
+						<input type="checkbox" id="Complete-Search" name="T3" value="Complete-Search">
 						<label for="Complete-Search">Complete-Search</label><br>
 
-						<input type="checkbox" id="Greedy-Algorithms" name="Greedy-Algorithms" value="">
+						<input type="checkbox" id="Greedy-Algorithms" name="T4" value="Greedy-Algorithms">
 						<label for="Greedy-Algorithms">Greedy-Algorithms</label><br>
 
-						<input type="checkbox" id="Dynamic-Programming" name="Dynamic-Programming" value="">
+						<input type="checkbox" id="Dynamic-Programming" name="T5" value="Dynamic-Programming">
 						<label for="Dynamic-Programming">Dynamic-Programming</label><br>
 
-						<input type="checkbox" id="Amortized-Analysis" name="Amortized-Analysis" value="">
+						<input type="checkbox" id="Amortized-Analysis" name="T6" value="Amortized-Analysis">
 						<label for="Amortized-Analysis">Amortized-Analysis</label><br>
 
-						<input type="checkbox" id="Range-Queries" name="Range-Queries" value="">
+						<input type="checkbox" id="Range-Queries" name="T7" value="Range-Queries">
 						<label for="Range-Queries">Range-Queries</label><br>
 
-						<input type="checkbox" id="Bit-Manipulation" name="Bit-Manipulation" value="">
+						<input type="checkbox" id="Bit-Manipulation" name="T8" value="Bit-Manipulation">
 						<label for="Bit-Manipulation">Bit-Manipulation</label><br>
 
-					</div>
-					<div>
-						
+						<input type="checkbox" id="Recursion" name="T9" value="Recursion">
+						<label for="Recursion">Recursion</label><br>
+
+						<input type="checkbox" id="Searching" name="T10" value="Searching">
+						<label for="Searching">Searching</label><br>
+						<button type="submit" class= "solve-button">SORT PROBLEMS</button>
+						</form>
 					</div>
 				</section>
 			</div>
 
 		</div>
+
+		<footer id="footer" class="footer ">
+			
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-12">
+							<div class="copyright-content">
+								<p>© Copyright 2021  |  All Rights Reserved by Sushiksha|Ankuram </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Copyright -->
+		</footer>
 	
 {% endblock content %}
